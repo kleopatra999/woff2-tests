@@ -253,7 +253,7 @@ def packTestHeader(header):
 def packTestDirectory(directory):
     data = ""
     directory = [(entry["tag"], entry) for entry in directory]
-    for tag, table in sorted(directory):
+    for tag, table in directory:
         if tag in knownTableTags:
             data += struct.pack(">B", knownTableTags.index(tag))
         else:

@@ -18,7 +18,7 @@ def getSFNTData(pathOrFile):
     font = TTFont(pathOrFile)
     tableChecksums = {}
     tableData = {}
-    tableOrder = [i for i in sorted(font.keys()) if len(i) == 4]
+    tableOrder = [i for i in font.keys() if len(i) == 4]
     for tag in tableOrder:
         tableChecksums[tag] = font.reader.tables[tag].checkSum
         tableData[tag] = transformTable(font, tag)
